@@ -1,3 +1,5 @@
+###useState first example#### 
+  
 //From the object that React exports, import the property useState. This is named import syntax as part of the module syste 
 import { useState } from 'react'
 
@@ -22,5 +24,52 @@ const App = () => {
     <div>{counter}</div>
   )
 }
+
+export default App
+
+###### Click on buttons to increase, decrease and reset display ####
+
+import {useState} from 'react'
+
+const App = () => {
+  const [ counter, setCounter ] = useState(0)
+
+  //Register an event handler function to the click event
+  const handleClick = () => {
+    setCounter(counter+1)
+  }
+
+  const increaseByOne = () => setCounter(counter + 1)
+  const decreaseByOne = () => setCounter(counter - 1)
+  const reset = () => setCounter(0)
+  return (
+    <>
+      <div>{counter}</div>
+      <Button onClick={increaseByOne} text="Plus"/>
+      <Button onClick={decreaseByOne} text="Minus"/>
+      <Button onClick={reset} text="Reset"/>
+      <h1>hello </h1>
+    </>
+    
+  )
+}
+
+const Display = (props) => {
+  return(
+    <div>
+        <h1>{props.counter}</h1>
+    </div>
+  )
+}
+
+const Button = (props) => {
+  return(
+    <button onClick={props.onClick}>
+      {props.text}
+    </button>
+
+  )
+}
+
 
 export default App
