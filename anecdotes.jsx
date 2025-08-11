@@ -41,7 +41,6 @@ const App = () => {
 
 const getRandom = () => {
   const out = Math.floor(Math.random() * 8)
-  console.log("The number we got is ", out)
   return out
 }
 
@@ -55,7 +54,6 @@ const DisplayMostVotes = ({votes, anecdotes}) => {
       maxVotes = votes[key]
     }
   })
-  console.log("rhosrsjf is ", outKey, maxVotes)
   return(
     <>
     <h2>Most Popular Anecdote</h2>
